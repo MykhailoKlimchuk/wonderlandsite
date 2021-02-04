@@ -19,7 +19,7 @@ class Game(models.Model):
 class Review(models.Model):
     author_name = models.CharField("Ім'я автора", max_length=200)
     review_text = models.TextField("Текст")
-    publish_date = models.DateField("Дата публікації", default=date.today)
+    publish_date = models.DateTimeField("Дата публікації")
     game = models.ForeignKey(Game, verbose_name="Гра", on_delete=models.CASCADE)
 
     def __str__(self):

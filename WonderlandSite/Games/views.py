@@ -15,5 +15,6 @@ class GameView(View):
 class GameDetailView(View):
     def get(self, request, game_id):
         game = Game.objects.get(id=game_id)
-        return render(request, "games/games_detail.html", {"game": game})
+        reviews = game.review_set.all()
+        return render(request, "games/game_detail.html", {"game": game, "reviews": reviews})
 

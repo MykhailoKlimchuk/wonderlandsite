@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Projects {% endblock %}
+
+{% block content %}
+
     {% for game in games_list %}
         <div>
             <img src="{{ game.main_image.url }}">
-            <a>{{ game.name }}</a>
+            <a href="{% url 'detail' game.id %}">{{ game.name }}</a>
         </div>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}

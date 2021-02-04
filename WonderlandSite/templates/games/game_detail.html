@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} {{ game.name }} {% endblock %}
+
+{% block content %}
+    <div>
+        <div class="style2">
+            <a><img src="{{ game.main_image.url }}" ></a>
+        </div>
+        <a><h1>{{ game.name }}</h1></a>
+        <a>{{ game.description }} </a>
+        <p>Release date: {{ game.release_date }} </p>
+    </div>
+
+    <div>
+        {% for review in reviews %}
+            <div class="style1">
+                <h2>{{ review.author_name }} </h2>
+                <p>{{ review.review_text }} </p>
+                <p>{{ review.publish_date }} </p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
