@@ -1,11 +1,25 @@
 .style1 {
- color: #828282;
- box-shadow: 4px 4px 15px 1px #1da0bd;
- padding-top: 10px;
- padding-right: 30px;
- padding-bottom: 50px;
- padding-left: 80px;
+    color: #828282;
+    box-shadow: 4px 4px 15px 1px #1da0bd;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
 }
 .style2 {
     text-align: center; /* Выравнивание по центру */
- }
+    color: #828282;
+    box-shadow: 4px 4px 15px 1px #1da0bd;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+
+body {
+  background-color: #92a8d1;
+}
+
+div {
+  background-color: #d5f4e6;
+}
