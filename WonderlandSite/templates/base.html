@@ -7,7 +7,10 @@
     <link rel="stylesheet"  type="text/css" href="{% static '/games/css/style.css'%}">
 </head>
 <body>
-<button type="button" name="ProjectsButton" formtarget="_self">Projects</button>
+<div class="bar">
+    <a>Wonderland</a>
+    <button class="button_on_bar" type="button" name="ProjectsButton" formtarget="_self">Projects</button>
+</div>
 {% block content %}
 {% endblock %}
 </body>
