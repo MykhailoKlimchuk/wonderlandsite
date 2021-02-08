@@ -7,10 +7,44 @@
     <link rel="stylesheet"  type="text/css" href="{% static '/games/css/style.css'%}">
 </head>
 <body>
-<div class="bar">
-    <a>Wonderland</a>
-    <button class="button_on_bar" type="button" name="ProjectsButton" formtarget="_self">Projects</button>
-</div>
+ <header class="header">
+  <div class="header__logo">
+    <img
+      src="images/logo.png"
+      alt="Moyo logo"
+      class="logo"
+    >
+  </div>
+
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="#" class="nav__link is-active">
+          Home
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          Projects
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          Gallery
+        </a>
+      </li>
+      <li class="nav__item">
+        <a
+          href="#"
+          class="nav__link"
+          data-qa="hover"
+        >
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+ </header>
 {% block content %}
 {% endblock %}
 </body>
