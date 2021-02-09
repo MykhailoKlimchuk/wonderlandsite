@@ -40,7 +40,6 @@ class HomeView(View):
 class TeamView(View):
     def get(self, request):
         teammates = Teammate.objects.all()
-        print(teammates)
         teammates_list = []
         i = 0
         j = 3
@@ -53,5 +52,4 @@ class TeamView(View):
             if j > len(teammates):
                 teammates_list.append(teammates[i:len(teammates)])
             break
-        print(teammates_list)
         return render(request, "team.html", {"teammates_list": teammates_list})
