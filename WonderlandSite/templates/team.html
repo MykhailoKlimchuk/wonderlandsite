@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Team {% endblock %}
+
+{% block content %}
+    <div class="style2">
+        <table style="border-collapse: collapse; width: 100%;" border="1">
+                {% for teammate_row in teammates_list %}
+                    <tr>
+                        {% for teammate in teammate_row %}
+                            <td>
+                                <p><img src="{{ teammate.photo.url }}" width="400" height="400"></p>
+                                <p>{{ teammate.name }}</p>
+                                <p>{{ teammate.position }}</p>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

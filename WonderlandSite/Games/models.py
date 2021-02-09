@@ -28,3 +28,17 @@ class Review(models.Model):
     class Meta:
         verbose_name = "Огляд"
         verbose_name_plural = "Огляди"
+
+
+class Teammate(models.Model):
+    name = models.CharField("Ім'я працівника", max_length=200)
+    position = models.CharField("Посада", max_length=200)
+    photo = models.ImageField("Фото працівника", upload_to="teammate_photos/")
+
+    def __str__(self):
+        return f'{self.name} {self.position}'
+
+    class Meta:
+        verbose_name = "Працівник"
+        verbose_name_plural = "Працівники"
+

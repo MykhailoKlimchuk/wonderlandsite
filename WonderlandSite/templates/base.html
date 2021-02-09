@@ -13,8 +13,6 @@
             class="logo"
             src="{% static '/games/img/Company_Logo.png'%}"
             alt="Company logo"
-            width="45"
-            height="45"
     >
   </div>
 
@@ -39,6 +37,14 @@
       <li class="nav__item">
         <a href="#" class="nav__link">
           Gallery
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="{% url 'our_team' %}"
+           {% if request.get_full_path == '/our_team/' %} class="nav__link is-active">
+           {% else %} class="nav__link">
+           {% endif %}
+          Our Team
         </a>
       </li>
       <li class="nav__item">

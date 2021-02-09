@@ -5,14 +5,16 @@
 {% block content %}
     <div class="style2">
         <table style="border-collapse: collapse; width: 100%;" border="1">
-            <tr>
-                {% for game in games_list %}
-                    <td>
-                        <p><img src="{{ game.main_image.url }}" width="400" height="400"></p>
-                        <p><a href="{% url 'detail' game.id %}">{{ game.name }}</a></p>
-                    </td>
+                {% for game_row in games_list %}
+                    <tr>
+                        {% for game in game_row %}
+                            <td>
+                                <p><img src="{{ game.main_image.url }}" width="400" height="400"></p>
+                                <p><a href="{% url 'detail' game.id %}">{{ game.name }}</a></p>
+                            </td>
+                        {% endfor %}
+                    </tr>
                 {% endfor %}
-            </tr>
         </table>
     </div>
 
