@@ -10,22 +10,30 @@
  <header class="header">
   <div class="header__logo">
     <img
-      src="images/logo.png"
-      alt="Moyo logo"
-      class="logo"
+            class="logo"
+            src="{% static '/games/img/Company_Logo.png'%}"
+            alt="Company logo"
+            width="45"
+            height="45"
     >
   </div>
 
   <nav class="nav">
     <ul class="nav__list">
       <li class="nav__item">
-        <a href="#" class="nav__link is-active">
-          Home
+        <a href="{% url 'home_page' %}"
+           {% if request.get_full_path == '/' %} class="nav__link is-active">
+           {% else %} class="nav__link">
+           {% endif %}
+           Home
         </a>
       </li>
       <li class="nav__item">
-        <a href="#" class="nav__link">
-          Projects
+        <a href="{% url 'projects' %}"
+           {% if request.get_full_path == '/projects/' %} class="nav__link is-active">
+           {% else %} class="nav__link">
+           {% endif %}
+           Projects
         </a>
       </li>
       <li class="nav__item">
@@ -44,6 +52,7 @@
       </li>
     </ul>
   </nav>
+
  </header>
 {% block content %}
 {% endblock %}

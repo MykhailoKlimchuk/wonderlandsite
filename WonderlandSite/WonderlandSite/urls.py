@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects/', include('Games.urls')),
+    path('', include('Games.urls')),
 ]
 
 if settings.DEBUG:
