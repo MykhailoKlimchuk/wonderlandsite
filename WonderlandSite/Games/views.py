@@ -4,10 +4,12 @@ from django.shortcuts import render
 from django.views.generic.base import View
 from .models import Game
 from .models import Teammate
+from .models import GalleryPhoto
 
 
 class GameView(View):
     def get(self, request):
+        #     todo зробити через штмл адаптивну таблицю
         games = Game.objects.all()
         games_list = []
         i = 0
@@ -25,6 +27,14 @@ class GameView(View):
         return render(request, "games/games_list.html", {"games_list": games_list})
 
 
+class GalleryView(View):
+    def get(self, request):
+        #     todo зробити через штмл адаптивну таблицю
+        gallery_photos = GalleryPhoto.objects.all()
+
+        return render(request, "gallery.html", {"gallery_photos": gallery_photos})
+
+
 class GameDetailView(View):
     def get(self, request, game_id):
         game = Game.objects.get(id=game_id)
@@ -39,6 +49,7 @@ class HomeView(View):
 
 class TeamView(View):
     def get(self, request):
+        #     todo зробити через штмл адаптивну таблицю
         teammates = Teammate.objects.all()
         teammates_list = []
         i = 0
@@ -53,3 +64,9 @@ class TeamView(View):
                 teammates_list.append(teammates[i:len(teammates)])
             break
         return render(request, "team.html", {"teammates_list": teammates_list})
+
+
+class ContactUsView(View):
+    def get(self, request):
+        return render(request, "contact_us.html", {})
+#     todo добавити форми

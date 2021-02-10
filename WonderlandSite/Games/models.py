@@ -42,3 +42,10 @@ class Teammate(models.Model):
         verbose_name = "Працівник"
         verbose_name_plural = "Працівники"
 
+
+class GalleryPhoto(models.Model):
+    photo = models.ImageField("Фото з галереї", upload_to="gallery_photo/")
+
+    class Meta:
+        verbose_name = "Фотографія з галереї"
+        verbose_name_plural = "Фотографії галереї"
