@@ -35,6 +35,8 @@ class Teammate(models.Model):
     position = models.CharField("Посада", max_length=200)
     photo = models.ImageField("Фото працівника", upload_to="teammate_photos/")
 
+    # todo добавити опис працівника і посилання на соцмережі
+
     def __str__(self):
         return f'{self.name} {self.position}'
 
