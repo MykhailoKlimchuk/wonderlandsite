@@ -49,3 +49,18 @@ class GalleryPhoto(models.Model):
     class Meta:
         verbose_name = "Фотографія з галереї"
         verbose_name_plural = "Фотографії галереї"
+
+
+class Contact(models.Model):
+    name = models.CharField("Ім'я того хто звернувся", max_length=200)
+    email = models.CharField("Пошта", max_length=200)
+    subject = models.CharField("Тема", max_length=200)
+    message = models.TextField("Повідомлення")
+
+    def __str__(self):
+        return f'{self.name} {self.subject}'
+
+    class Meta:
+        verbose_name = "Повідомлення"
+        verbose_name_plural = "Повідомлення"
+

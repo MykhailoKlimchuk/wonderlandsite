@@ -1,3 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %} Contact Us {% endblock %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.subject }}<br>
+        {{ form.message }}<br>
+        <span>{{ error }}</span>
+        <button type="submit">Contact Us</button>
+
+    </form>
+
+{% endblock %}

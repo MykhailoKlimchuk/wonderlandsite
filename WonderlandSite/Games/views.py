@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.generic.base import View
 from .models import Game
 from .models import Teammate
 from .models import GalleryPhoto
+from .forms import ContactUsForm
 
 
 class GameView(View):
@@ -68,5 +69,22 @@ class TeamView(View):
 
 class ContactUsView(View):
     def get(self, request):
-        return render(request, "contact_us.html", {})
-#     todo добавити форми
+        form = ContactUsForm()
+        return render(request, "contact_us.html", {"form": form})
+
+    def post(self, request):
+        form = ContactUsForm(request.POST)
+        error = ""
+        if form.is_valid():
+            form.save()
+            return redirect('home_page')
+        else:
+            error = "form is not valid"
+
+        data = {
+            "form": form,
+            "error": error,
+        }
+
+        return render(request, "contact_us.html", data)
+
