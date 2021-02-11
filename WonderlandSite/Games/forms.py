@@ -9,15 +9,21 @@ class ContactUsForm(ModelForm):
 
         widgets = {
             "name": TextInput(attrs={
-                "placeholder": "Your Name"
+                "placeholder": "Your Name",
+                "class": "form-control"
             }),
             "email": TextInput(attrs={
-                "placeholder": "Your Email"
+                "placeholder": "Your Email",
+                "class": "form-control"
+
             }),
             "subject": TextInput(attrs={
-                "placeholder": "Subject"
+                "placeholder": "Subject",
+                "class": "form-control"
             }),
             "message": Textarea(attrs={
-                "placeholder": "Message"
+                "placeholder": "Message",
+                "class": "form-control md-textarea",
+                "rows": 6
             })
         }

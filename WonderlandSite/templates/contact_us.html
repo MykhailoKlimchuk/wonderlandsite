@@ -2,16 +2,21 @@
 
 {% block title %} Contact Us {% endblock %}
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
+<div class="form4 top">
+    <div class="container">
+        <div class="col-md-7 col-md-offset-2">
+            <form method="post" class="form-bg">
+                {% csrf_token %}
 
-        {{ form.name }}<br>
-        {{ form.email }}<br>
-        {{ form.subject }}<br>
-        {{ form.message }}<br>
-        <span>{{ error }}</span>
-        <button type="submit">Contact Us</button>
-
-    </form>
+                {{ form.name }}<br>
+                {{ form.email }}<br>
+                {{ form.subject }}<br>
+                {{ form.message }}<br>
+                <span>{{ error }}</span>
+                <button type="submit" class="btn btn-primary">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
