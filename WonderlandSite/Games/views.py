@@ -10,7 +10,6 @@ from .forms import ContactUsForm
 
 class GameView(View):
     def get(self, request):
-        #     todo зробити через штмл адаптивну таблицю
         games_list = Game.objects.all()
 
         return render(request, "games/games_list.html", {"games_list": games_list})
@@ -18,7 +17,6 @@ class GameView(View):
 
 class GalleryView(View):
     def get(self, request):
-        #     todo зробити через штмл адаптивну таблицю
         gallery_photos = GalleryPhoto.objects.all()
 
         return render(request, "gallery.html", {"gallery_photos": gallery_photos})
@@ -38,7 +36,6 @@ class HomeView(View):
 
 class TeamView(View):
     def get(self, request):
-        #     todo зробити через штмл адаптивну таблицю
         teammates_list = Teammate.objects.all()
         return render(request, "team.html", {"teammates_list": teammates_list})
 
@@ -49,6 +46,7 @@ class ContactUsView(View):
         return render(request, "contact_us.html", {"form": form})
 
     def post(self, request):
+        # todo добавить тг бота який буде адміну кидати сповіщення
         form = ContactUsForm(request.POST)
         error = ""
         if form.is_valid():
