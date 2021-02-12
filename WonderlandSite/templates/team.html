@@ -11,33 +11,32 @@
 {% block content %}
     <div class="container ">
         <div class="row">
-            {% for teammate_row in teammates_list %}
-                {% for teammate in teammate_row %}
-                    <div class="col-xl-3 col-md-6 mb-4 ">
-                        <div class="card border-0 ">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front"> <img src="{{ teammate.photo.url }}" class="card-img-top" alt="avatar">
-                                        <div class="card-body text-center ">
-                                            <h5 class="card-title mb-0">{{ teammate.name }}</h5>
-                                            <div class="card-text text-black-50">{{ teammate.position }}</div>
-                                        </div>
+            {% for teammate in teammates_list %}
+
+                <div class="col-xl-3 col-md-6 mb-4 ">
+                    <div class="card border-0 ">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front"> <img src="{{ teammate.photo.url }}" class="card-img-top" alt="avatar">
+                                    <div class="card-body text-center ">
+                                        <h5 class="card-title mb-0">{{ teammate.name }}</h5>
+                                        <div class="card-text text-black-50">{{ teammate.position }}</div>
                                     </div>
-                                    <div class="flip-card-back">
-                                        <h1 class="person text- ">Member One</h1>
-                                        <p class="description text-black-50">This is some description about the member of the team, which appears at the back of card and the image appears at the top of the front side with their social media links and the position of the member.</p> <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> <a href="#" class="fa fa-linkedin"></a>
-                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1 class="person text- ">Member One</h1>
+                                    <p class="description text-black-50">This is some description about the member of the team, which appears at the back of card and the image appears at the top of the front side with their social media links and the position of the member.</p> <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> <a href="#" class="fa fa-linkedin"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
+                </div>
             {% endfor %}
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
 
 
 {% endblock %}

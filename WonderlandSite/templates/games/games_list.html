@@ -3,19 +3,17 @@
 {% block title %} Projects {% endblock %}
 
 {% block content %}
-    <div class="style2">
-        <table style="border-collapse: collapse; width: 100%;" border="1">
-                {% for game_row in games_list %}
-                    <tr>
-                        {% for game in game_row %}
-                            <td>
-                                <p><img src="{{ game.main_image.url }}" width="400" height="400"></p>
-                                <p><a href="{% url 'detail' game.id %}">{{ game.name }}</a></p>
-                            </td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-        </table>
+    <div class="row">
+        {% for game in games_list %}
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="bg-white rounded shadow-sm"><img src="{{ game.main_image.url }}" class="gallery_photo">
+                    <div class="p-4">
+                        <h5> <a href="{% url 'detail' game.id %}" class="text-dark">{{ game.name }}</a></h5>
+                        <p class="small text-muted mb-0">small description</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
