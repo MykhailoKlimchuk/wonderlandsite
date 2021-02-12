@@ -17,10 +17,10 @@
             {% for teammate in teammates_list %}
 
                 <div class="col-xl-3 col-md-6 mb-4 ">
-                    <div class="card border-0 ">
+                    <div>
                         <div class="flip-card">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front"> <img src="{{ teammate.photo.url }}" class="card-img-top" alt="avatar">
+                                <div class="flip-card-front"> <img src="{{ teammate.photo.url }}" class="card-img-top" height="150" alt="avatar">
                                     <div class="card-body text-center ">
                                         <h5 class="card-title mb-0">{{ teammate.name }}</h5>
                                         <div class="card-text text-black-50">{{ teammate.position }}</div>
