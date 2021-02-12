@@ -1,24 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %} {{ game.name }} {% endblock %}
+{% block links %}
+    <link rel="stylesheet"  type="text/css" href="{% static '/games/css/projects.css'%}">
+{% endblock %}
 
 {% block content %}
-    <div>
-        <div class="style2">
-            <a><img src="{{ game.main_image.url }}" class="project_detail_main_photo"></a>
+    <div class="project_description">
+        <div >
+            <a><img src="{{ game.main_image.url }}" class="main_photo"></a>
         </div>
+
         <a><h1>{{ game.name }}</h1></a>
-        <a>{{ game.description }} </a>
-        <p>Release date: {{ game.release_date }} </p>
+        <p>{{ game.description }} </p>
+        <p class="project_description__release_date">Release date: {{ game.release_date }} </p>
     </div>
 
-    <div>
+    <div class="review">
         {% for review in reviews %}
             <div class="style1">
                 <h2>{{ review.author_name }} </h2>
                 <p>{{ review.review_text }} </p>
-                <p>{{ review.publish_date }} </p>
+                <p class="review__publish_date">{{ review.publish_date }} </p>
             </div>
         {% endfor %}
     </div>
-
 {% endblock %}

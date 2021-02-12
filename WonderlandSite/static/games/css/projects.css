@@ -13,3 +13,37 @@
     display: flex;
     background-size: 100%;
 }
+
+.main_photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.project_description {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.project_description release_date {
+    font-style: oblique;
+}
+
+.review {
+    padding-top: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.review__publish_date {
+    font-style: italic;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-indent: 1.5em;
+    margin-top: 0
+}
+
