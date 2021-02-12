@@ -12,38 +12,38 @@ class GameView(View):
     def get(self, request):
         games_list = Game.objects.all()
 
-        return render(request, "games/games_list.html", {"games_list": games_list})
+        return render(request, "projects/projects.html", {"games_list": games_list})
 
 
 class GalleryView(View):
     def get(self, request):
         gallery_photos = GalleryPhoto.objects.all()
 
-        return render(request, "gallery.html", {"gallery_photos": gallery_photos})
+        return render(request, "gallery/gallery.html", {"gallery_photos": gallery_photos})
 
 
 class GameDetailView(View):
     def get(self, request, game_id):
         game = Game.objects.get(id=game_id)
         reviews = game.review_set.all()
-        return render(request, "games/game_detail.html", {"game": game, "reviews": reviews})
+        return render(request, "projects/project_detail.html", {"game": game, "reviews": reviews})
 
 
 class HomeView(View):
     def get(self, request):
-        return render(request, "home.html", {})
+        return render(request, "home/home.html", {})
 
 
 class TeamView(View):
     def get(self, request):
         teammates_list = Teammate.objects.all()
-        return render(request, "team.html", {"teammates_list": teammates_list})
+        return render(request, "team/team.html", {"teammates_list": teammates_list})
 
 
 class ContactUsView(View):
     def get(self, request):
         form = ContactUsForm()
-        return render(request, "contact_us.html", {"form": form})
+        return render(request, "contact_us/contact_us.html", {"form": form})
 
     def post(self, request):
         # todo добавить тг бота який буде адміну кидати сповіщення
@@ -60,5 +60,5 @@ class ContactUsView(View):
             "error": error,
         }
 
-        return render(request, "contact_us.html", data)
+        return render(request, "contact_us/contact_us.html", data)
 

@@ -1,76 +1,22 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet"  type="text/css" href="{% static '/games/css/style.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static '/games/css/team.css' %}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    {% block links %}
-    {% endblock %}
-</head>
-<body>
- <header class="header">
-  <div class="header__logo">
-    <img
-            class="logo"
-            src="{% static '/games/img/Company_Logo.png'%}"
-            alt="Company logo"
-    >
-  </div>
+        <link rel="stylesheet"  type="text/css" href="{% static '/games/css/base_style.css'%}">
+        <link rel="stylesheet"  type="text/css" href="{% static '/games/css/header.css'%}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a href="{% url 'home_page' %}"
-           {% if request.get_full_path == '/' %} class="nav__link is-active">
-           {% else %} class="nav__link">
-           {% endif %}
-           Home
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="{% url 'projects' %}"
-           {% if request.get_full_path == '/projects/' %} class="nav__link is-active">
-           {% else %} class="nav__link">
-           {% endif %}
-           Projects
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="{% url 'gallery' %}"
-           {% if request.get_full_path == '/gallery/' %} class="nav__link is-active">
-           {% else %} class="nav__link">
-           {% endif %}
-          Gallery
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="{% url 'our_team' %}"
-           {% if request.get_full_path == '/our_team/' %} class="nav__link is-active">
-           {% else %} class="nav__link">
-           {% endif %}
-          Our Team
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="{% url 'contact_us' %}"
-           data-qa="hover"
-           {% if request.get_full_path == '/contact_us/' %} class="nav__link is-active">
-           {% else %} class="nav__link">
-           {% endif %}
-          Contact Us
-        </a>
-      </li>
-    </ul>
-  </nav>
-
- </header>
- <main>
-    {% block content %}
-    {% endblock %}
- </main>
-</body>
+        {% block links %}
+        {% endblock %}
+    </head>
+        <body>
+            {% include 'header.html' %}
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
 </html>
